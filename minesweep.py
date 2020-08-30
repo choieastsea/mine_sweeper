@@ -10,6 +10,10 @@ import random
 
 #test 'print matrix'
 def print_matrix(field):
+    '''
+    when parameter is matrix,
+    print_matrix print out visually squared m*n matrix.
+    '''
     print(end='   ')
     for i in range(len(field[0])):
         print(format(str(i+1),"2s"),end=' ')
@@ -23,6 +27,10 @@ def print_matrix(field):
 
 #k개의 mine을 field에 'b'로 심고, 어디에 심었는지 리턴한다
 def plant_mine(field,k):
+    '''
+    plant k mines in field randomly.
+    returns 'field' with mines , 'mine_list' which has list of mines coordinates
+    '''
     #print('\n\nfunc : plant_mine,','field :',field,', k :',k,'\n\n')
     mine_list = []
     i = 0
@@ -224,6 +232,7 @@ def flag(score,flag_num, row, col):
     global user_map
     global mine_list
     flag_num += 1
+    #cover된 상태일때만 깃발세울 수 있다
     if user_map[row][col] == '▢':
         user_map[row][col] = '▶'
     else:
